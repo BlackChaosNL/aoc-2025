@@ -1,3 +1,4 @@
+import argparse
 from puzzles.day_one.main import main as day_one
 
 def puzzle_dict(file: list[str], part: int, day: int=1):
@@ -52,8 +53,12 @@ def load_file(loc: str, example: int=0) -> list[str]:
     return c
 
 def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-test', help='Uses example files for testing puzzle output.', type=bool)
+    args = parser.parse_args()
+    
     excersize, part = handle_input()
-    fc = load_file(f'day_{excersize}_part_{part}.txt')
+    fc = load_file(f'day_{excersize}_part_{part}{"" if not args.test else "_example"}.txt', args.test)
     puzzle_dict(fc, part, excersize)
     return 0
     

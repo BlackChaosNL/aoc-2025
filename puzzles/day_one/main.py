@@ -7,6 +7,7 @@ def algorithm_part_two(input: list[str]):
     pass
 
 def main(input: list[str] = [], part: int = 1):
+    print(input)
     if part == 1:
         return algorithm_part_one(input=input)
     else:
