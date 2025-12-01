@@ -61,8 +61,5 @@ def main() -> int:
     fc = load_file(f'day_{excersize}_part_{part}{"" if not args.test else "_example"}.txt', args.test)
     puzzle_dict(fc, part, excersize)
     return 0
-    
-
-    
 
 main()
