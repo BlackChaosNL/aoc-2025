@@ -1,5 +1,21 @@
-from puzzles.day_one import main as day_1
+from puzzles.day_one.main import main as day_one
 
+def puzzle_dict(file: list[str], part: int, day: int=1):
+    switch = {
+        1: day_one(file, part),
+        2: None,
+        3: None,
+        4: None,
+        5: None,
+        6: None,
+        7: None,
+        8: None,
+        9: None,
+        10: None,
+        11: None,
+        12: None,
+    }
+    return switch.get(day)
 
 def handle_input() -> list[int]:
     exc = 0
@@ -36,10 +52,9 @@ def load_file(loc: str, example: int=0) -> list[str]:
     return c
 
 def main() -> int:
-
     excersize, part = handle_input()
     fc = load_file(f'day_{excersize}_part_{part}.txt')
-    d = day_1()
+    puzzle_dict(fc, part, excersize)
     return 0
     
 
